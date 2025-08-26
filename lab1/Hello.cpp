@@ -1,5 +1,7 @@
 /*** 
- * 
+ * ECE 2310 Fall 2025
+ *
+ * In this lab I am running Hello world code and setting up my github.
  * */
 
 #include <iostream>
