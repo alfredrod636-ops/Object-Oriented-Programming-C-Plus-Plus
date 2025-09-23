@@ -1,13 +1,49 @@
 #include <iostream>
-#include <cstdlib>
-using namespace std; 
+#include <vector>
 
-int main() {
-    int x = 0;
-    int y = 5;
-        while (x<y){
-            printf("%i\n", x);
-            x++;
-        }
-        printf("looped through 5 times\n");
+using namespace std;
+
+void printMemVec(vector<int> & vec){
+    printf("vector-each int is %lu bytes\n", sizeof(vec[0]));
+     for(size_t i = 0; i < vec.size(); i++){
+      printf("value %i at memory location %p\n",vec[i], &vec[i]);
+   }
+
+}
+
+void incVecBy10(vector<int> & vec){
+    for(size_t i = 0; i < vec.size(); i++){
+       vec[i] += 10;
+   }
+}
+
+int main(){
+    const int SIZE = 5;
+
+    vector<int> vec (SIZE);
+
+    for(int i = 0;i <= SIZE; i++ ){
+        vec[i] = 100 + i;
+    }
+
+ printf("Before increment-------------\n");
+ printMemVec(vec);
+
+ incVecBy10(vec);
+ printf("After increment------------\n");
+ printMemVec(vec);
+ 
+ 
+ vec.pop_back();
+ 
+ printf("After Pop----------------\n");
+ printMemVec(vec);
+
+
+ vec.push_back(101);
+ vec.push_back(102);
+
+ printf("After Push-----------------\n");
+    printMemVec(vec);
+    return 0;
 }
