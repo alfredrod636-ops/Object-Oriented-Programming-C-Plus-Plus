@@ -2,7 +2,11 @@
 #include <vector>
 
 using namespace std;
-
+/**
+ * @brief prints the elements in a vector and memory location
+ * 
+ * @param vec- vector of int
+ */
 void printMemVec(vector<int> & vec){
     printf("vector-each int is %lu bytes\n", sizeof(vec[0]));
      for(size_t i = 0; i < vec.size(); i++){
@@ -10,7 +14,11 @@ void printMemVec(vector<int> & vec){
    }
 
 }
-
+/**
+ * @brief increments all the element in the vector by 10 
+ * 
+ * @param vec vector of int
+ */
 void incVecBy10(vector<int> & vec){
     for(size_t i = 0; i < vec.size(); i++){
        vec[i] += 10;
