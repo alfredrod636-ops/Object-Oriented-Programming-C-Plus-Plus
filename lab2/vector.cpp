@@ -17,7 +17,7 @@ void printMemVec(vector<int> & vec){
 /**
  * @brief increments all the element in the vector by 10 
  * 
- * @param vec vector of int
+ * @param vec address to a vector of integers
  */
 void incVecBy10(vector<int> & vec){
     for(size_t i = 0; i < vec.size(); i++){
