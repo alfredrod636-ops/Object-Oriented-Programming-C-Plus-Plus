@@ -1,4 +1,4 @@
-#ifndef RPG_H
+
 #define RPG_H
 
 using namespace std;
@@ -15,9 +15,17 @@ class RPG {
     bool isAlive() const;
     void setHitsTaken(int new_hits);
 
-    /accessors
+    //accessors
     string getName() const;
-
+    int getHitsTaken() const;
+    float getLuck() const;
+    float getExp() const;
+    int getLevel() const;
    private:
-   string name;
-}
+    
+    string name;
+    int hits_taken;
+    float luck;
+    float exp;
+    int level;
+};
