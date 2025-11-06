@@ -8,11 +8,6 @@ Game::Game() {}
 
 
 Game::~Game() {
-    for (RPG* player : players) {
-        delete player;
-    }
-    players.clear();
-    live_players.clear();
 }
 
 
