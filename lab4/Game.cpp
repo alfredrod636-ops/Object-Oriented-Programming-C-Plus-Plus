@@ -24,7 +24,18 @@ void Game::generatePlayers(int n)
 
 
 int Game::selectPlayer() {
-    static int selector = 0;
+    static random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dist(0, live_players.size() - 1);
+
+    int randomIndex = dist(gen);
+
+    set<int>::iterator it = live_players.begin();
+    advance(it, randomIndex);
+
+    int selectedIndex = *it;
+    return selectedIndex;
+    /*static int selector = 0;
 
     vector<int> indices(live_players.begin(), live_players.end());
 
@@ -38,7 +49,7 @@ int Game::selectPlayer() {
     int selected = indices[selector];
     selector++; 
 
-    return selected;
+    return selected;*/
 }
 
 
